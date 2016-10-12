@@ -12,7 +12,7 @@ all: js/sql.js debug js/worker.sql.js memory-growth
 debug: EMFLAGS= -O1 -g -s INLINING_LIMIT=10 -s RESERVED_FUNCTION_POINTERS=64
 debug: js/sql-debug.js
 
-optimized: EMFLAGS= --memory-init-file 0 --closure 0 -O2 -s INLINING_LIMIT=50 -s RESERVED_FUNCTION_POINTERS=64 -s NO_DYNAMIC_EXECUTION=1 -s NO_FILESYSTEM=0
+optimized: EMFLAGS= --memory-init-file 0 --closure 0 -O2 -s INLINING_LIMIT=50 -s RESERVED_FUNCTION_POINTERS=64 -s NO_DYNAMIC_EXECUTION=1 -s NO_FILESYSTEM=0 -s TOTAL_MEMORY=20971520
 optimized: js/sql-optimized.js
 
 memory-growth: EMFLAGS= --memory-init-file 0 --closure 1 -O3 -s INLINING_LIMIT=50 -s RESERVED_FUNCTION_POINTERS=64 -s ALLOW_MEMORY_GROWTH=1
